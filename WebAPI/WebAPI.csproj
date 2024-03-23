@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RentACar.Application\RentACar.Application.csproj" />
+    <ProjectReference Include="..\RentACar.Persistance\RentACar.Persistance.csproj" />
   </ItemGroup>
 
 </Project>
