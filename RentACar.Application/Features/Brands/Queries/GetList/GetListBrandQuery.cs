@@ -20,7 +20,8 @@ public class GetListBrandQuery : IRequest<GetListResponse<GetListBrandListItemDt
             Paginate<Brand> brands =  await brandRepository.GetListAsync(
                 index: request.PageRequest.PageIndex,
                 size: request.PageRequest.PageSize,
-                cancellationToken: cancellationToken);
+                cancellationToken: cancellationToken,
+                withDeleted: true);
 
             GetListResponse<GetListBrandListItemDto> response = mapper.Map<GetListResponse<GetListBrandListItemDto>>(brands);
             return response;
