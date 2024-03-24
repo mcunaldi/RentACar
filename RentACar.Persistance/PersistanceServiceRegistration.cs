@@ -12,9 +12,14 @@ public static class PersistanceServiceRegistration
         this IServiceCollection services,
         IConfiguration configuration)
     {
+        //services.AddDbContext<BaseDbContext>(options =>
+        //{
+        //    options.UseInMemoryDatabase("narchitecture");
+        //});
+
         services.AddDbContext<BaseDbContext>(options =>
         {
-            options.UseInMemoryDatabase("narchitecture");
+            options.UseSqlServer(configuration.GetConnectionString("RentACar"));
         });
 
         services.AddScoped<IBrandRepository, BrandRepository>();

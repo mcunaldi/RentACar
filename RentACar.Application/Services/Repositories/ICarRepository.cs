@@ -1,9 +1,10 @@
 ﻿using Core.Persistance.Repositories;
 using Core.Persistence.Repositories;
-using RentACar.Domain.Entities;
+using Domain.Entities;
 
 namespace RentACar.Application.Services.Repositories;
-public interface IBrandRepository : IAsyncRepository<Brand, Guid>, IRepository<Brand, Guid>
+
+public interface ICarRepository : IAsyncRepository<Car, Guid>, IRepository<Car, Guid>
 {
 }
 

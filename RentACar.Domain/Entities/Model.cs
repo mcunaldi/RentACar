@@ -1,4 +1,5 @@
 ﻿using Core.Persistance.Repositories;
+using Domain.Entities;
 
 namespace RentACar.Domain.Entities;
 public class Model : Entity<Guid>

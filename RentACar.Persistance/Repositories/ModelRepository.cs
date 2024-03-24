@@ -4,9 +4,10 @@ using RentACar.Domain.Entities;
 using RentACar.Persistance.Contexts;
 
 namespace RentACar.Persistance.Repositories;
-public class BrandRepository : EfRepositoryBase<Brand, Guid, BaseDbContext>, IBrandRepository
+
+public class ModelRepository : EfRepositoryBase<Model, Guid, BaseDbContext>, IModelRepository
 {
-    public BrandRepository(BaseDbContext context) : base(context)
+    public ModelRepository(BaseDbContext context) : base(context)
     {
     }
 }
