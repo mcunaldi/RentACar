@@ -1,0 +1,34 @@
+﻿using AutoMapper;
+using Core.Application.Requests;
+using Core.Application.Responses;
+using Core.Persistance.Dynamic;
+using Core.Persistance.Paging;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+using RentACar.Application.Services.Repositories;
+using RentACar.Domain.Entities;
+
+namespace RentACar.Application.Features.Models.Queries.GetListByDynamic;
+public class GetListByDynamicModelQuery : IRequest<GetListResponse<GetListByDynamicModelListItemDto>>
+{
+    public PageRequest PageRequest { get; set; }
+    public DynamicQuery DynamicQuery { get; set; }
+    public class GetListByDynamicModelQueryHandler(
+        IModelRepository modelRepository,
+        IMapper mapper) : IRequestHandler<GetListByDynamicModelQuery, GetListResponse<GetListByDynamicModelListItemDto>>
+    {
+        public async Task<GetListResponse<GetListByDynamicModelListItemDto>> Handle(GetListByDynamicModelQuery request, CancellationToken cancellationToken)
+        {
+            Paginate<Model> models = await modelRepository.GetListByDynamicAsync(
+                request.DynamicQuery,
+                include: m => m.Include(m => m.Brand).Include(m => m.Fuel).Include(m => m.Transmission),
+                index: request.PageRequest.PageIndex,
+                size: request.PageRequest.PageSize
+                );
+
+            var response = mapper.Map<GetListResponse<GetListByDynamicModelListItemDto>>(models);
+
+            return response;
+        }
+    }
+}

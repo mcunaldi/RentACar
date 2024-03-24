@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using RentACar.Application.Features.Brands.Rules;
 using RentACar.Application.Services.Repositories;
 using RentACar.Domain.Entities;
 
@@ -10,10 +11,13 @@ public class CreateBrandCommand : IRequest<CreatedBrandResponse>
 
     public class CreateBrandCommandHandler(
         IBrandRepository brandRepository,
-        IMapper mapper) : IRequestHandler<CreateBrandCommand, CreatedBrandResponse>
+        IMapper mapper,
+        BrandBusinessRules brandBusinessRules) : IRequestHandler<CreateBrandCommand, CreatedBrandResponse>
     {
         public async Task<CreatedBrandResponse>? Handle(CreateBrandCommand request, CancellationToken cancellationToken)
         {
+            await brandBusinessRules.BrandNameCannotBeDuplicatedWhenInserted(request.Name);
+
             Brand brand = mapper.Map<Brand>(request);
             brand.Id = Guid.NewGuid();
 

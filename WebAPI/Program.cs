@@ -1,3 +1,4 @@
+using Core.CrossCuttingConcerns.Exceptions.Extensions;
 using RentACar.Application;
 using RentACar.Persistance;
 
@@ -21,6 +22,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+if(app.Environment.IsProduction()) //development'ta son kullanýcý gibi davranmamasý için
+app.ConfigureCustomExceptionMiddleware(); //bütün proje için try-catch çalýþtýrýr.
 
 app.UseHttpsRedirection();
 
