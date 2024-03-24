@@ -1,20 +1,21 @@
 ﻿using Core.Persistance.Repositories;
 
 namespace RentACar.Domain.Entities;
-public class Brand : Entity<Guid>
-{
-    public string Name { get; set; } = string.Empty;
 
+public class Fuel : Entity<Guid>
+{
+    public string Name { get; set; }
     public virtual ICollection<Model> Models { get; set; }
 
-    public Brand()
+    public Fuel()
     {
-        Models  = new HashSet<Model>();
+        Models = new HashSet<Model>();
     }
 
-    public Brand(Guid id, string name) : this()
+    public Fuel(Guid id, string name) : this()
     {
         Id = id;
         Name = name;
     }
 }
+
