@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
+using Core.Application.Pipelines.Transaction;
 using MediatR;
 using RentACar.Application.Features.Brands.Rules;
 using RentACar.Application.Services.Repositories;
 using RentACar.Domain.Entities;
 
 namespace RentACar.Application.Features.Brands.Commands.Create;
-public class CreateBrandCommand : IRequest<CreatedBrandResponse>
+public class CreateBrandCommand : IRequest<CreatedBrandResponse>, ITransactionalRequest
 {
     public string Name { get; set; }
 
@@ -21,6 +22,7 @@ public class CreateBrandCommand : IRequest<CreatedBrandResponse>
             Brand brand = mapper.Map<Brand>(request);
             brand.Id = Guid.NewGuid();
 
+            await brandRepository.AddAsync(brand);
             await brandRepository.AddAsync(brand);
 
             CreatedBrandResponse createdBrandResponse = mapper.Map<CreatedBrandResponse>(brand);
