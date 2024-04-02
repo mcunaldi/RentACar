@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Core.Application.Requests;
 using Core.Application.Responses;
-using Core.Persistance.Dynamic;
-using Core.Persistance.Paging;
+using Core.Persistence.Dynamic;
+using Core.Persistence.Paging;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using RentACar.Application.Services.Repositories;

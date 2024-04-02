@@ -1,4 +1,4 @@
-﻿using Core.Persistance.Repositories;
+﻿using Core.Persistence.Repositories;
 
 namespace RentACar.Domain.Entities;
 

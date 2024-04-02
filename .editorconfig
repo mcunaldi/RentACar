@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# SYSLIB1099: Casting between a 'ComImport' type and a source-generated COM type is not supported
+dotnet_diagnostic.SYSLIB1099.severity = silent

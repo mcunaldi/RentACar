@@ -1,4 +1,4 @@
-﻿using Core.Persistance.Repositories;
+﻿using Core.Persistence.Repositories;
 using RentACar.Domain.Entities;
 using RentACar.Domain.Enums;
 

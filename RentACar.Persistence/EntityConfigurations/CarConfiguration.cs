@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace RentACar.Persistance.EntityConfigurations;
+namespace RentACar.Persistence.EntityConfigurations;
 
 public class CarConfiguration : IEntityTypeConfiguration<Car>
 {

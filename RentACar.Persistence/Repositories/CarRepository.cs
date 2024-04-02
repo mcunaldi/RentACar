@@ -1,9 +1,9 @@
-﻿using Core.Persistance.Repositories;
+﻿using Core.Persistence.Repositories;
 using Domain.Entities;
 using RentACar.Application.Services.Repositories;
-using RentACar.Persistance.Contexts;
+using Persistence.Contexts;
 
-namespace RentACar.Persistance.Repositories;
+namespace RentACar.Persistence.Repositories;
 
 public class CarRepository : EfRepositoryBase<Car, Guid, BaseDbContext>, ICarRepository
 {

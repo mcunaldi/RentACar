@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Core.Application.Responses;
-using Core.Persistance.Paging;
+using Core.Persistence.Paging;
 using RentACar.Application.Features.Models.Queries.GetList;
 using RentACar.Application.Features.Models.Queries.GetListByDynamic;
 using RentACar.Domain.Entities;

@@ -1,6 +1,6 @@
 using Core.CrossCuttingConcerns.Exceptions.Extensions;
 using RentACar.Application;
-using RentACar.Persistance;
+using RentACar.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddApplicationServices();
-builder.Services.AddPersistanceServices(builder.Configuration);
+builder.Services.AddPersistenceServices(builder.Configuration);
 builder.Services.AddHttpContextAccessor();
 
 //builder.Services.AddDistributedMemoryCache(); //Cacheleme

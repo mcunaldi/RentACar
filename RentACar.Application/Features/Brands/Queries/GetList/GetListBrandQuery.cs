@@ -3,7 +3,7 @@ using Core.Application.Pipelines.Caching;
 using Core.Application.Pipelines.Logging;
 using Core.Application.Requests;
 using Core.Application.Responses;
-using Core.Persistance.Paging;
+using Core.Persistence.Paging;
 using MediatR;
 using RentACar.Application.Services.Repositories;
 using RentACar.Domain.Entities;

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace RentACar.Persistance.Migrations
+namespace RentACar.Persistence.Migrations
 {
     /// <inheritdoc />
     public partial class init : Migration

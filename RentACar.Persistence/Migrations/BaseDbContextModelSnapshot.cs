@@ -3,20 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RentACar.Persistance.Contexts;
+using Persistence.Contexts;
 
 #nullable disable
 
-namespace RentACar.Persistance.Migrations
+namespace RentACar.Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20240324121727_init")]
-    partial class init
+    partial class BaseDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

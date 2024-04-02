@@ -1,6 +1,6 @@
 ﻿using Core.Application.Requests;
 using Core.Application.Responses;
-using Core.Persistance.Dynamic;
+using Core.Persistence.Dynamic;
 using Microsoft.AspNetCore.Mvc;
 using RentACar.Application.Features.Models.Queries.GetList;
 using RentACar.Application.Features.Models.Queries.GetListByDynamic;

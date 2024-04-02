@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RentACar.Application\RentACar.Application.csproj" />
-    <ProjectReference Include="..\RentACar.Persistance\RentACar.Persistance.csproj" />
+    <ProjectReference Include="..\RentACar.Persistence\RentACar.Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,8 +31,8 @@
     <Reference Include="Core.CrossCuttingConcerns">
       <HintPath>..\..\..\corePackages\Core.Packages\Core.CrossCuttingConcerns\bin\Debug\net8.0\Core.CrossCuttingConcerns.dll</HintPath>
     </Reference>
-    <Reference Include="Core.Persistance">
-      <HintPath>..\..\..\corePackages\Core.Packages\Core.Persistance\bin\Debug\net8.0\Core.Persistance.dll</HintPath>
+    <Reference Include="Core.Persistence">
+      <HintPath>..\..\..\corePackages\Core.Packages\Core.Persistence\bin\Debug\net8.0\Core.Persistence.dll</HintPath>
     </Reference>
   </ItemGroup>
 

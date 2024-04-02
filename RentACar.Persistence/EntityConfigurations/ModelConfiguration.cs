@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RentACar.Domain.Entities;
 
-namespace RentACar.Persistance.EntityConfigurations;
+namespace RentACar.Persistence.EntityConfigurations;
 
 public class ModelConfiguration : IEntityTypeConfiguration<Model>
 {

@@ -4,7 +4,7 @@ using Core.Application.Responses;
 using MediatR;
 using RentACar.Application.Services.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Core.Persistance.Paging;
+using Core.Persistence.Paging;
 using RentACar.Domain.Entities;
 
 namespace RentACar.Application.Features.Models.Queries.GetList;
